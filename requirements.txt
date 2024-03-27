@@ -4,3 +4,4 @@ plotly
 dash-bootstrap-components
 pybase64
 gunicorn
+openpyxl
