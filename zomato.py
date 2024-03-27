@@ -8,7 +8,7 @@ import pybase64
 
 # Load and preprocess data
 df1 = pd.read_csv('https://raw.githubusercontent.com/nethajinirmal13/Training-datasets/main/zomato/zomato.csv')
-df2 = pd.read_excel('C:\\Users\\krkar\\Downloads\\Country-Code.xlsx', engine='openpyxl')
+df2 = pd.read_excel('Country-Code.xlsx', engine='openpyxl')
 df = pd.merge(df1, df2, on='Country Code')
 
 df['Average Cost for two'].mean()
