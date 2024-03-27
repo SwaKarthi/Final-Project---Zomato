@@ -65,9 +65,9 @@ app.layout = html.Div([
     ])
 ])
 # Encode images to pybase64
-with open("C:/Users/krkar/Downloads/burger.jpg", "rb") as image_file:
+with open("burger.jpg", "rb") as image_file:
     encoded_home_bg = pybase64.b64encode(image_file.read()).decode('utf-8')
-with open("C:/Users/krkar/Downloads/about food.jpg", "rb") as image_file:
+with open("about food.jpg", "rb") as image_file:
     encoded_about_bg = pybase64.b64encode(image_file.read()).decode('utf-8')
 
 # Home page layout
