@@ -4,7 +4,7 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 import plotly.express as px
 import dash_bootstrap_components as dbc
-import base64
+import pybase64
 
 # Load and preprocess data
 df1 = pd.read_csv('https://raw.githubusercontent.com/nethajinirmal13/Training-datasets/main/zomato/zomato.csv')
@@ -64,14 +64,14 @@ app.layout = html.Div([
         ])
     ])
 ])
-# Encode images to base64
+# Encode images to pybase64
 with open("C:/Users/krkar/Downloads/burger.jpg", "rb") as image_file:
-    encoded_home_bg = base64.b64encode(image_file.read()).decode('utf-8')
+    encoded_home_bg = pybase64.b64encode(image_file.read()).decode('utf-8')
 with open("C:/Users/krkar/Downloads/about food.jpg", "rb") as image_file:
-    encoded_about_bg = base64.b64encode(image_file.read()).decode('utf-8')
+    encoded_about_bg = pybase64.b64encode(image_file.read()).decode('utf-8')
 
 # Home page layout
-home_layout = html.Div(style={'backgroundImage': f'url("data:image/jpeg;base64,{encoded_home_bg}")', 'backgroundSize': 'cover', 'height': '100vh', 'padding': '20px'}, children=[
+home_layout = html.Div(style={'backgroundImage': f'url("data:image/jpeg;pybase64,{encoded_home_bg}")', 'backgroundSize': 'cover', 'height': '100vh', 'padding': '20px'}, children=[
     html.P(" "),
     html.P("Zomato is a popular restaurant discovery and food delivery platform.", className="section-content", style={'font-size': '25px', 'color': 'black', 'textAlign': 'justify','fontWeight': 'bold'}),  
     html.P("This project aims to analyze Zomato restaurant data to provide insights and trends.", className="section-content", style={'font-size': '25px', 'color': 'black', 'textAlign': 'justify','fontWeight': 'bold'}), 
@@ -83,7 +83,7 @@ home_layout = html.Div(style={'backgroundImage': f'url("data:image/jpeg;base64,{
 
 
 # About page layout
-about_layout = html.Div(style={'backgroundImage': f'url("data:image/jpeg;base64,{encoded_about_bg}")', 'backgroundSize': 'cover', 'height': '100vh', 'padding': '20px'}, children=[
+about_layout = html.Div(style={'backgroundImage': f'url("data:image/jpeg;pybase64,{encoded_about_bg}")', 'backgroundSize': 'cover', 'height': '100vh', 'padding': '20px'}, children=[
     html.H2(" "),
     html.H2("About Zomato", className="section-title", style={'color': 'blue'}),
     html.H2(" "),
